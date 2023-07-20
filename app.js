@@ -1,6 +1,5 @@
 const path = require('path');
 const express = require('express');
-const electron = require('electron');
 
 const app = express();
 
@@ -14,5 +13,6 @@ app.get('/auth/discord', (request, response) => {
 	return response.sendFile('dashboard.html', { root: '.' });
 });
 
-const port = '51235';
-app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
+// const port = '51235';
+const port = process.env.PORT || 3000;
+app.listen(port);
