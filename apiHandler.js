@@ -1,7 +1,7 @@
-module.exports = {
-    get: function(app) {
-        app.get('/', (request, response) => {
-            response.send('h')
-        })
-    }
-}
+const express = require('express');
+
+const app = express();
+
+app.get('/', (request, response) => {
+	return response.send('hi')
+});

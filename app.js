@@ -11,10 +11,7 @@ app.get('/', (request, response) => {
 	return response.sendFile('auth.html', { root: '.' });
 });
 
-app.get('/api', (request, response) => {
-	const res = apiHandler.get(app);
-	return res;
-});
+app.use('/api', apiHandler);
 
 app.get('/auth/discord', (request, response) => {
 	return response.sendFile('dashboard.html', { root: '.' });
