@@ -7,6 +7,7 @@ router.get('/', (request, response) => {
 });
 
 router.get('/discord/user/:code', (request, response) => {
+    const authCode = request.params.code
     fetch(process.env.DISCORD_API_ENDPOINT, {
         method: "POST",
         cache: "default",
