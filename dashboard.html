@@ -20,9 +20,10 @@
 <script>
   window.onload = () => {
     const fragment = new URLSearchParams(window.location.hash.slice(1));
-    const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
+    const [code] = [fragment.get('code')];
+    // const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
 
-    if (!accessToken) {
+    if (!code) {
         window.location.href('/')
     }
 
